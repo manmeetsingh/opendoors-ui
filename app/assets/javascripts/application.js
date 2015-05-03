@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-1.11.2.min
 //= require turbolinks
+//= require bootstrap
+//= require bootstrap.min
+//= require opendoor
 //= require_tree .

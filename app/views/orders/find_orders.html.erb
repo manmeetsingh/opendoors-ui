@@ -1,0 +1,22 @@
+<div>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>OrderId </th>
+      <th>Scheduled Start Time</th>
+      <th>Status</th>
+      <th>Service Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td><%= link_to("ODOD" + order[:order_id].to_s, "/orders/#{order[:order_id]}")%></td>
+      <td><%= order[:slot_start_time]%></td>
+      <td><%= order[:status]%></td>
+      <td><%= order[:service_name]%></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

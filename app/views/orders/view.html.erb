@@ -1,0 +1,21 @@
+<div>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>OrderId </th>
+      <th>Scheduled Start Time</th>
+      <th>Status</th>
+      <th>Service Name</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= "ODOD" + @order[:order_id].to_s%></td>
+          <td><%= @order[:slot_start_time]%></td>
+          <td><%= @order[:status]%></td>
+          <td><%= @order[:service_name]%></td>
+        </tr>
+    </tbody>
+  </table>
+  <%= render 'order_actions'%>
+</div>

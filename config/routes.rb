@@ -53,4 +53,13 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get "/" => "home#home"
+  get "/orders" => "orders#find_orders"
+  get "/orders/:order_id" => "orders#view"
+  post "/orders/cancel" => "orders#cancel"
+  post "/orders/confirm" => "orders#confirm"
+  post "/orders/start" => "orders#start"
+  post "/orders/complete" => "orders#complete"
+  post "/orders/close" => "orders#close"
 end

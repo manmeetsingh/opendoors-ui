@@ -1,0 +1,21 @@
+<form>
+  <input type="hidden" name="order_id" value="<%= @order[:order_id] %>">
+  <%if @order[:status] == "created"%>
+      <input type="submit" formmethod="post" formaction="/orders/confirm" class="btn btn-default" value="Confirm">
+  <%elsif @order[:status] == "confirmed"%>
+      <input type="submit" formmethod="post" formaction="/orders/start" class="btn btn-default" value="Start">
+  <%elsif @order[:status] == "started"%>
+      <input type="submit" formmethod="post" formaction="/orders/complete" class="btn btn-default" value="Complete">
+  <%elsif @order[:status] == "completed"%>
+      <input type="submit" formmethod="post" formaction="/orders/close" class="btn btn-default" value="Close">
+
+  <%end%>
+
+  <%if @order[:status].in? ["created", "confirmed"]%>
+      <input type="submit" formmethod="post" formaction="/orders/cancel" class="btn btn-danger" value="Cancel">
+  <%end%>
+</form>
+
+<script>
+
+</script>
