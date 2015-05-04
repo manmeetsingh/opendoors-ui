@@ -26,3 +26,4 @@ tags
 *.un~
 public/data*
 .DS_Store
+.elasticbeanstalk/
