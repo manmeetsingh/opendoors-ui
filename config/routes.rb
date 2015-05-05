@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   #   end
 
   get "/" => "home#home"
+  get "/about_us" => "home#about_us"
   get "/orders" => "orders#find_orders"
   get "/orders/:order_id" => "orders#view"
   post "/orders/cancel" => "orders#cancel"

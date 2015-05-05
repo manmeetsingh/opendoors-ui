@@ -6,6 +6,16 @@
       <th>Scheduled Start Time</th>
       <th>Status</th>
       <th>Service Name</th>
+      <th>Order placed on</th>
+      <%if @order[:actual_start_time].present?%>
+          <th>Actual Start Time</th>
+      <%end%>
+      <%if @order[:actual_end_time].present?%>
+          <th>Actual End Time</th>
+      <%end%>
+      <%if @order[:total_price].present?%>
+          <th>Total Price</th>
+      <%end%>
     </tr>
     </thead>
     <tbody>
@@ -14,7 +24,26 @@
           <td><%= @order[:slot_start_time]%></td>
           <td><%= @order[:status]%></td>
           <td><%= @order[:service_name]%></td>
+          <td><%= @order[:created_at]%></td>
+          <%if @order[:actual_start_time].present?%>
+              <td><%= @order[:actual_start_time] %></td>
+          <%end%>
+          <%if @order[:actual_end_time].present?%>
+              <td><%= @order[:actual_end_time] %></td>
+          <%end%>
+          <%if @order[:total_price].present?%>
+              <td><%= @order[:total_price] %></td>
+          <%end%>
         </tr>
+    </tbody>
+  </table>
+   <% address = @order[:address] %>
+  <table class="table table-bordered">
+    <tbody>
+    <tr><td><%= address[:name] %></td></tr>
+    <tr><td><%= address[:line1] %></td></tr>
+    <tr><td><%= address[:line2] %></td></tr>
+    <tr><td><%= "#{address[:city]}, #{address[:state]} : #{address[:pincode]}" %></td></tr>
     </tbody>
   </table>
   <%= render 'order_actions'%>
