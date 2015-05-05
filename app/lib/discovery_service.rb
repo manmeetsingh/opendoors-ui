@@ -1,5 +1,5 @@
 class DiscoveryService
-  @@service_url = "http://localhost:12345"
+  @@service_url = "http://servicediscovery-opendoors.rhcloud.com" #"http://localhost:12345"
 
   def self.get_orders(user_id)
     resource = RestClient::Resource.new @@service_url + "/orders?user_id=#{user_id}"
