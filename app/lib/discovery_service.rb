@@ -1,5 +1,5 @@
 class DiscoveryService
-  @@service_url = "http://servicediscovery-opendoors.rhcloud.com" #"http://localhost:12345"
+  @@service_url = "http://localhost:12345"
 
   def self.get_orders(user_id)
     resource = RestClient::Resource.new @@service_url + "/orders?user_id=#{user_id}"
@@ -23,14 +23,14 @@ class DiscoveryService
     resource.put({}.to_json)
   end
 
-  def self.start_order(order_id)
+  def self.start_order(order_id, start_time)
     resource = RestClient::Resource.new @@service_url + "/orders/#{order_id}/start"
-    resource.put({start_time: Time.now}.to_json)
+    resource.put({start_time: start_time}.to_json)
   end
 
-  def self.complete_order(order_id)
+  def self.complete_order(order_id, end_time)
     resource = RestClient::Resource.new @@service_url + "/orders/#{order_id}/complete"
-    resource.put({end_time: Time.now}.to_json)
+    resource.put({end_time: end_time}.to_json)
   end
 
   def self.close_order(order_id)

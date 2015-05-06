@@ -16,5 +16,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap.min
+//= require DateTimePicker.min
 //= require opendoor
 //= require_tree .

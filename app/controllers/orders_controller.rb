@@ -15,12 +15,12 @@ class OrdersController < ApplicationController
   end
 
   def start
-    @order = DiscoveryService.start_order(params[:order_id])
+    @order = DiscoveryService.start_order(params[:order_id], params[:start_time] || Time.now.to_s(:db))
     redirect_to :back
   end
 
   def complete
-    @order = DiscoveryService.complete_order(params[:order_id])
+    @order = DiscoveryService.complete_order(params[:order_id], params[:end_time] || Time.now.to_s(:db))
     redirect_to :back
   end
 
