@@ -32,7 +32,7 @@
               <td><%= @order[:actual_end_time] %></td>
           <%end%>
           <%if @order[:total_price].present?%>
-              <td><%= @order[:total_price] %></td>
+              <td><%= "#{@order[:total_price]} Rs" %></td>
           <%end%>
         </tr>
     </tbody>
